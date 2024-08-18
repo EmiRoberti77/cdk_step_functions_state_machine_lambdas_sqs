@@ -78,7 +78,7 @@ export class StateMachineSqsLambdaStack extends cdk.Stack {
       })
     );
 
-    //create first step
+    //create step 1 in the state machine
     const step1Task = new tasks.LambdaInvoke(this, "invokeStep1Lambda", {
       stateName: "invokeStep1Lambda",
       comment: "step 1",
@@ -108,6 +108,7 @@ export class StateMachineSqsLambdaStack extends cdk.Stack {
       })
     );
 
+    //create step 2 in the state machine
     const step2Task = new tasks.LambdaInvoke(this, "invokeStep2Lambda", {
       stateName: "invokeStep2Lambda",
       comment: "step 2",
